@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SMMDemo:war">
+    <output-path>$PROJECT_DIR$/stud/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>SMMDemo</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="SMMDemo.war">
+      <element id="artifact" artifact-name="SMMDemo:war exploded" />
+    </root>
+  </artifact>
+</component>
