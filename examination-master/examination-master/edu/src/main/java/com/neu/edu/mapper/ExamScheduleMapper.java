@@ -17,7 +17,7 @@ import java.util.List;
 public interface ExamScheduleMapper {
     List<ExamScheduleVO> findAll();
 
-    List<ExamScheduleVO> findByName(String  exam_name);
+    List<ExamScheduleVO> findByName(String exam_name);
 
     int add(ExamSchedule examSchedule);
 

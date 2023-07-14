@@ -10,6 +10,7 @@ public interface SubjectMapper {
     List<SubjectVO> findAll();
 
     List<SubjectVO> findById(int teacher_id);
+
     int add(Subject subject);
 
     int deleteById(int subject_id);

@@ -4,10 +4,10 @@
     <div class="right">
       <h4>登录</h4>
       <form action="">
-        <input class="acc" v-model="users.name" name="user" type="text" placeholder="用户名" autocomplete="off"
-               required>
-        <input class="acc" v-model="users.password" name="pw" type="password" placeholder="密码" autocomplete="off"
-               required>
+        <input v-model="users.name" autocomplete="off" class="acc" name="user" placeholder="用户名" required
+               type="text">
+        <input v-model="users.password" autocomplete="off" class="acc" name="pw" placeholder="密码" required
+               type="password">
         <input class="submit" type="submit" value="Login" v-on:click.prevent="loging">
       </form>
       <div class="fn">
@@ -39,7 +39,7 @@ export default {
           console.log(error);
           alert("账号或密码错误")
         });
-      }else alert("账号或密码未输入")
+      } else alert("账号或密码未输入")
     }
   }
 }
@@ -172,7 +172,7 @@ export default {
   color: #83a4d4;
 }
 
-.box .left{
+.box .left {
   font-size: 70px;
   text-align: center;
   writing-mode: vertical-rl;

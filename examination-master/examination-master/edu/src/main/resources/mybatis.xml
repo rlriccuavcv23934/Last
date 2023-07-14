@@ -6,9 +6,9 @@
 
 
     <typeAliases>
-         <!--<typeAlias type="com.neu.edu.vo.SubjectVO" alias="subjectVO"/>-->
-         <package name="com.neu.edu.vo"/>
-         <package name="com.neu.edu.domain"/>
+        <!--<typeAlias type="com.neu.edu.vo.SubjectVO" alias="subjectVO"/>-->
+        <package name="com.neu.edu.vo"/>
+        <package name="com.neu.edu.domain"/>
     </typeAliases>
 
 </configuration>

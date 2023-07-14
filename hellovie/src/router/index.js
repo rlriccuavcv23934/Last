@@ -16,7 +16,7 @@ const routes = [
         children: [
             {
                 path: "/",
-                redirect:"/login"
+                redirect: "/login"
             },
             {
                 path: '/class/classlist',

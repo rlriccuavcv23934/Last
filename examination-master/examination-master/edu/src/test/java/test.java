@@ -11,7 +11,7 @@ import java.nio.charset.StandardCharsets;
  * @date:2023/7/14 11:19
  */
 public class test {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         String str = "";
         try {
             String encodedExamName = URLEncoder.encode(str, StandardCharsets.UTF_8.toString());

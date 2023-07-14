@@ -1,25 +1,25 @@
 <template>
   <div class="box">
 
-    <el-button type="primary" style="margin-bottom: 10px;" @click="handleAdd">添加</el-button>
-    <el-input v-model="findid" v-on:input="handleSelect" placeholder="输入题号进行搜索" maxlength="10" clearable
-              style="padding-bottom: 20px"/>
+    <el-button style="margin-bottom: 10px;" type="primary" @click="handleAdd">添加</el-button>
+    <el-input v-model="findid" clearable maxlength="10" placeholder="输入题号进行搜索" style="padding-bottom: 20px"
+              v-on:input="handleSelect"/>
     {{ findid }}
-    <el-table :data="tableData" v-loading="loading" border style="width: 100%">
+    <el-table v-loading="loading" :data="tableData" border style="width: 100%">
 
-      <el-table-column label="题目编号" align="center">
+      <el-table-column align="center" label="题目编号">
         <template #default="scope">
           {{ scope.row.question_id }}
         </template>
       </el-table-column>
 
-      <el-table-column label="课程名" align="center">
+      <el-table-column align="center" label="课程名">
         <template #default="scope">
           {{ scope.row.name }}
         </template>
       </el-table-column>
 
-      <el-table-column label="题目类型" align="center">
+      <el-table-column align="center" label="题目类型">
         <template #default="scope">
           <template v-if="scope.row.type==0">选择题</template>
           <template v-else-if="scope.row.type==1">判断题</template>
@@ -28,33 +28,33 @@
         </template>
       </el-table-column>
 
-      <el-table-column label="试题" align="center">
+      <el-table-column align="center" label="试题">
         <template #default="scope">
           {{ scope.row.title }}
         </template>
       </el-table-column>
 
-      <el-table-column label="分值" align="center">
+      <el-table-column align="center" label="分值">
         <template #default="scope">
           {{ scope.row.score }}
         </template>
       </el-table-column>
 
-      <el-table-column label="选项" align="center">
+      <el-table-column align="center" label="选项">
         <template #default="scope">
           <template v-for="option in scope.row.options">
-            <el-radio v-model="scope.row.answer" disabled :label="option.value">{{ option.value }}</el-radio>
+            <el-radio v-model="scope.row.answer" :label="option.value" disabled>{{ option.value }}</el-radio>
           </template>
         </template>
       </el-table-column>
 
-      <el-table-column label="参考答案" align="center">
+      <el-table-column align="center" label="参考答案">
         <template #default="scope">
           {{ scope.row.answer }}
         </template>
       </el-table-column>
 
-      <el-table-column label="操作" align="center">
+      <el-table-column align="center" label="操作">
         <template #default="scope">
           <el-button size="small" @click="handleEdit(scope.row)">编辑</el-button>
           <el-button size="small" type="danger" @click="handleDelete(scope.row.question_id)">删除</el-button>
@@ -91,7 +91,7 @@
       </el-form-item>
       <div v-if="examData.type==0">
         <el-form-item label="　　">
-          <el-input v-model="optionItem" style="width: 60px" size="small" placeholder="选项"/>
+          <el-input v-model="optionItem" placeholder="选项" size="small" style="width: 60px"/>
           <el-button size="small" style="margin: 0px 20px;" v-on:click="handleSaveOption">保存</el-button>
         </el-form-item>
 
@@ -110,7 +110,7 @@
       </el-form-item>
 
       <el-form-item label="参考答案">
-        <el-input type="textarea" v-model="examData.answer" autocomplete="off"/>
+        <el-input v-model="examData.answer" autocomplete="off" type="textarea"/>
       </el-form-item>
 
 

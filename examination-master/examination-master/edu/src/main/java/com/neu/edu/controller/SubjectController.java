@@ -17,27 +17,27 @@ public class SubjectController {
     private SubjectService subjectService;
 
     @GetMapping("")
-    public ResultModel<List<SubjectVO>> findAll(){
+    public ResultModel<List<SubjectVO>> findAll() {
         return subjectService.findAll();
     }
 
     @GetMapping("/{id}")
-    public ResultModel<List<SubjectVO>> findById(@PathVariable("id") int teacher_id){
+    public ResultModel<List<SubjectVO>> findById(@PathVariable("id") int teacher_id) {
         return subjectService.findById(teacher_id);//teacher_id
     }
 
     @PostMapping("")
-    public ResultModel add(SubjectDTO subjectDTO){
+    public ResultModel add(SubjectDTO subjectDTO) {
         return subjectService.add(subjectDTO);
     }
 
     @DeleteMapping("/{id}")
-    public ResultModel deleteById(@PathVariable("id") int subject_id){
+    public ResultModel deleteById(@PathVariable("id") int subject_id) {
         return subjectService.deleteById(subject_id);
     }
 
     @PutMapping("/{subject_id}")
-    public ResultModel updateById(@PathVariable("subject_id")int subject_id, SubjectDTO subjectDTO){
+    public ResultModel updateById(@PathVariable("subject_id") int subject_id, SubjectDTO subjectDTO) {
         return subjectService.updateById(subjectDTO);
     }
 

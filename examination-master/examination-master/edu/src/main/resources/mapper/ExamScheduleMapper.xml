@@ -7,11 +7,14 @@
 <mapper namespace="com.neu.edu.mapper.ExamScheduleMapper">
 
     <select id="findAll" resultType="examScheduleVO">
-        select * from t_exam_schedule
+        select *
+        from t_exam_schedule
     </select>
 
-    <select id="findByName"  resultType="examScheduleVO">
-        select * from t_exam_schedule where exam_name = #{exam_name}
+    <select id="findByName" resultType="examScheduleVO">
+        select *
+        from t_exam_schedule
+        where exam_name = #{exam_name}
     </select>
 
     <insert id="add" parameterType="examSchedule">
@@ -26,7 +29,9 @@
     </insert>
 
     <delete id="deleteById" parameterType="int">
-        delete from t_exam_schedule where course_id = #{course_id}
+        delete
+        from t_exam_schedule
+        where course_id = #{course_id}
     </delete>
 
     <update id="updateById" parameterType="examSchedule">

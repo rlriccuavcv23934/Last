@@ -1,31 +1,31 @@
 <template>
   <div class="box">
 
-    <el-button type="primary" style="margin-bottom: 10px;" @click="handleAdd">添加</el-button>
-    <el-input v-model="findid" v-on:input="handleSelect" placeholder="输入课程号进行搜索" maxlength="10" clearable
-              style="padding-bottom: 20px"/>
+    <el-button style="margin-bottom: 10px;" type="primary" @click="handleAdd">添加</el-button>
+    <el-input v-model="findid" clearable maxlength="10" placeholder="输入课程号进行搜索" style="padding-bottom: 20px"
+              v-on:input="handleSelect"/>
     {{ findid }}
-    <el-table :data="tableData" v-loading="loading" border style="width: 100%">
+    <el-table v-loading="loading" :data="tableData" border style="width: 100%">
 
-      <el-table-column label="学号" align="center">
+      <el-table-column align="center" label="学号">
         <template #default="scope">
           {{ scope.row.student_id }}
         </template>
       </el-table-column>
 
-      <el-table-column label="分数" align="center">
+      <el-table-column align="center" label="分数">
         <template #default="scope">
           {{ scope.row.score }}
         </template>
       </el-table-column>
 
-      <el-table-column label="科目" align="center">
+      <el-table-column align="center" label="科目">
         <template #default="scope">
           {{ scope.row.subject_id }}
         </template>
       </el-table-column>
 
-      <el-table-column label="操作" align="center">
+      <el-table-column align="center" label="操作">
         <template #default="scope">
           <el-button size="small" @click="handleEdit(scope.row)">
             编辑

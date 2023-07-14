@@ -1,12 +1,12 @@
 <template>
   <div class="box">
-    <el-button type="primary" style="margin-bottom: 10px;" @click="handleAdd">添加</el-button>
-    <el-input v-model="findid" v-on:input="handleSelect" placeholder="输入考试编号进行搜索" maxlength="10" clearable
-              style="padding-bottom: 20px"/>
+    <el-button style="margin-bottom: 10px;" type="primary" @click="handleAdd">添加</el-button>
+    <el-input v-model="findid" clearable maxlength="10" placeholder="输入考试编号进行搜索" style="padding-bottom: 20px"
+              v-on:input="handleSelect"/>
     {{ findid }}
-    <el-table :data="tableData" v-loading="loading" border style="width: 100%">
+    <el-table v-loading="loading" :data="tableData" border style="width: 100%">
 
-      <el-table-column label="课程号" align="center">
+      <el-table-column align="center" label="课程号">
 
         <!--  TODO      label考试编号-->
         <template #default="scope">
@@ -14,38 +14,38 @@
         </template>
       </el-table-column>
 
-      <el-table-column label="考试名称" align="center">
+      <el-table-column align="center" label="考试名称">
         <template #default="scope">
           {{ scope.row.exam_name }}
         </template>
       </el-table-column>
 
-      <el-table-column label="老师编号" align="center">
+      <el-table-column align="center" label="老师编号">
         <template #default="scope">
           {{ scope.row.teacher_id }}
         </template>
       </el-table-column>
 
-      <el-table-column label="课室" align="center">
+      <el-table-column align="center" label="课室">
         <template #default="scope">
           {{ scope.row.room }}
         </template>
       </el-table-column>
 
-      <el-table-column label="开始时间" align="center">
+      <el-table-column align="center" label="开始时间">
         <template #default="scope">
           {{ scope.row.start_time }}
         </template>
       </el-table-column>
 
-      <el-table-column label="结束时间" align="center">
+      <el-table-column align="center" label="结束时间">
         <template #default="scope">
           {{ scope.row.end_time }}
         </template>
       </el-table-column>
 
 
-      <el-table-column label="操作" align="center">
+      <el-table-column align="center" label="操作">
         <template #default="scope">
           <el-button size="small" @click="handleEdit(scope.row)">
             编辑
@@ -73,12 +73,12 @@
       <el-form-item label="考试时间设定">
         <el-date-picker
             v-model="examData.time"
-            type="datetimerange"
+            end-placeholder="End date"
+            format="YYYY/MM/DD hh:mm:ss"
             range-separator="To"
             start-placeholder="Start date"
-            end-placeholder="End date"
 
-            format="YYYY/MM/DD hh:mm:ss"
+            type="datetimerange"
             value-format="YYYY-MM-DD HH:mm:ss"
         />
       </el-form-item>
@@ -126,7 +126,6 @@ export default {
           }).catch((error) => {
       });
     },
-
     handleAdd() {
 
       this.examData = {

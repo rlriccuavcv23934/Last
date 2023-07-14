@@ -24,7 +24,7 @@ public class SubjectServiceImpl implements SubjectService {
         if (subjectVOList == null) {
             resultModel.setCode(401);
             resultModel.setMsg("查询学科失败");
-        }else{
+        } else {
             resultModel.setCode(200);
             resultModel.setMsg("查询学科成功");
             resultModel.setData(subjectVOList);
@@ -40,7 +40,7 @@ public class SubjectServiceImpl implements SubjectService {
         if (subjectVOList == null) {
             resultModel.setCode(401);
             resultModel.setMsg("查询学科失败");
-        }else{
+        } else {
             resultModel.setCode(200);
             resultModel.setMsg("查询学科成功");
             resultModel.setData(subjectVOList);
@@ -60,7 +60,7 @@ public class SubjectServiceImpl implements SubjectService {
         if (subject == null) {
             resultModel.setCode(401);
             resultModel.setMsg("添加学科失败");
-        }else {
+        } else {
             subjectMapper.add(subject);
             resultModel.setCode(200);
             resultModel.setMsg("添加学科成功");
@@ -71,15 +71,15 @@ public class SubjectServiceImpl implements SubjectService {
     @Override
     public ResultModel deleteById(int subject_id) {
         ResultModel resultModel = new ResultModel();
-        try{
+        try {
             if (subjectMapper.deleteById(subject_id) == 0) {
                 resultModel.setCode(401);
                 resultModel.setMsg("删除学科失败");
-            }else {
+            } else {
                 resultModel.setCode(200);
                 resultModel.setMsg("删除学科成功");
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             resultModel.setCode(500);
             resultModel.setMsg("有学生选修，不能删除");
         }
@@ -99,7 +99,7 @@ public class SubjectServiceImpl implements SubjectService {
         if (subject == null) {
             resultModel.setCode(200);
             resultModel.setMsg("更新学科失败");
-        }else{
+        } else {
             resultModel.setCode(200);
             resultModel.setMsg("更新学科成功");
         }

@@ -1,30 +1,30 @@
 <template>
   <div class="box">
-    <el-button type="primary" style="margin-bottom: 10px;" @click="handleAdd">添加</el-button>
-    <el-input v-model="findid" v-on:input="handleSelect" placeholder="输入课程号进行搜索" maxlength="10" clearable
-              style="padding-bottom: 20px"/>
+    <el-button style="margin-bottom: 10px;" type="primary" @click="handleAdd">添加</el-button>
+    <el-input v-model="findid" clearable maxlength="10" placeholder="输入课程号进行搜索" style="padding-bottom: 20px"
+              v-on:input="handleSelect"/>
     {{ findid }}
-    <el-table :data="tableData" v-loading="loading" border style="width: 100%">
+    <el-table v-loading="loading" :data="tableData" border style="width: 100%">
 
-      <el-table-column label="课程号" align="center">
+      <el-table-column align="center" label="课程号">
         <template #default="scope">
           {{ scope.row.subject_id }}
         </template>
       </el-table-column>
 
-      <el-table-column label="课程名" align="center">
+      <el-table-column align="center" label="课程名">
         <template #default="scope">
           {{ scope.row.name }}
         </template>
       </el-table-column>
 
-      <el-table-column label="老师编号" align="center">
+      <el-table-column align="center" label="老师编号">
         <template #default="scope">
           {{ scope.row.teacher_id }}
         </template>
       </el-table-column>
 
-      <el-table-column label="操作" align="center">
+      <el-table-column align="center" label="操作">
         <template #default="scope">
           <el-button size="small" @click="handleEdit(scope.row)">
             编辑
@@ -158,13 +158,13 @@ export default {
     },
     handleSelect() {//课程号搜索
       console.log(this.findid);
-          //重新加载信息
-          axios.get('/edu/subjects/'+ this.findid)
-              .then((response) => {
-                this.tableData = response.data.data;
-                this.loading = false;
-              }).catch((error) => {
-          });
+      //重新加载信息
+      axios.get('/edu/subjects/' + this.findid)
+          .then((response) => {
+            this.tableData = response.data.data;
+            this.loading = false;
+          }).catch((error) => {
+      });
     },
   },
 

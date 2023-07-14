@@ -4,14 +4,14 @@
     <div class="right">
       <h4>注册</h4>
       <form action="">
-        <input class="acc" v-model="users.name" name="user" type="text" placeholder="用户名" autocomplete="off"
-               required>
-        <input class="acc" v-model="users.password" name="pw" type="password" placeholder="密码" autocomplete="off"
-               required>
-        <input class="acc" v-model="users.phone" name="pw" type="text" placeholder="电话" autocomplete="off"
-               required>
-        <input class="acc" v-model="users.mail" name="pw" type="email" placeholder="邮箱" autocomplete="off"
-               required>
+        <input v-model="users.name" autocomplete="off" class="acc" name="user" placeholder="用户名" required
+               type="text">
+        <input v-model="users.password" autocomplete="off" class="acc" name="pw" placeholder="密码" required
+               type="password">
+        <input v-model="users.phone" autocomplete="off" class="acc" name="pw" placeholder="电话" required
+               type="text">
+        <input v-model="users.mail" autocomplete="off" class="acc" name="pw" placeholder="邮箱" required
+               type="email">
         <input class="submit" type="submit" value="Reg" v-on:click.prevent="reging">
       </form>
       <div class="fn">
@@ -24,6 +24,7 @@
 <script>
 import axios from "axios"
 import qs from "qs"
+
 export default {
   name: "reg",
   data() {
@@ -181,7 +182,7 @@ export default {
   color: #83a4d4;
 }
 
-.box .left{
+.box .left {
   font-size: 100px;
   text-align: center;
   writing-mode: vertical-rl;

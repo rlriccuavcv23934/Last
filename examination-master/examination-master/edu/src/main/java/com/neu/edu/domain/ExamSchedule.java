@@ -25,12 +25,15 @@ public class ExamSchedule {
     public Integer getCourse_id() {
         return course_id;
     }
+
     public void setCourse_id(Integer course_id) {
         this.course_id = course_id;
     }
+
     public String getExam_name() {
         return exam_name;
     }
+
     public void setExam_name(String exam_name) {
         this.exam_name = exam_name;
     }

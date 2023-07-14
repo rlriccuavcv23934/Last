@@ -7,11 +7,14 @@
 <mapper namespace="com.neu.edu.mapper.SubjectMapper">
 
     <select id="findAll" resultType="subjectVO">
-        select * from t_subject
+        select *
+        from t_subject
     </select>
 
-    <select id="findById"  resultType="subjectVO">
-        select * from t_subject where teacher_id = #{teacher_id}
+    <select id="findById" resultType="subjectVO">
+        select *
+        from t_subject
+        where teacher_id = #{teacher_id}
     </select>
 
     <insert id="add" parameterType="subject">
@@ -26,7 +29,9 @@
     </insert>
 
     <delete id="deleteById" parameterType="int">
-        delete from t_subject where subject_id=#{subject_id}
+        delete
+        from t_subject
+        where subject_id = #{subject_id}
     </delete>
 
     <update id="updateById" parameterType="subject">
